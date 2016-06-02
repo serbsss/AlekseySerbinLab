@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+     <h:body>
+        <h1>Список материалов</h1>
+        <f:view>   
+
+            <h:form>
+                <h2>
+                    <h:outputLabel value="Материалы "/>
+
+                </h2>
+                <h:commandLink value="Назад" action="/material/Create.xhtml" />
+                <table cellspacing="1" cellpadding="1"  width="80%" border="2" >  
+                    <tr>
+                        <td> ID материала</td>
+                        <td> Название </td> 
+                        <td> Вес </td>
+                        <td> Производитель </td> 
+                        <td> Стоимость </td>
+                        <td> Количество </td>
+
+                    </tr> 
+                    <c:forEach items="#{materialBean.getAll()}" var="m">
+                        <tr> 
+                            <td> #{m.idMaterial} </td>
+                            <td> #{m.name} </td> 
+                            <td> #{m.weight} </td>
+                            <td> #{m.manufacturer} </td> 
+                            <td> #{m.cost} </td>
+                            <td> #{m.quantity} </td>
+                            <td><div>
+                                    <h:commandLink value="Редактировать информацию о материале"  action="/Edit.xhtml" />
+                                </div></td>
+                            <td>    <div>
+                                    <h:commandLink value="Удалить материал"   />
+                                </div></td>
+                        </tr> 
+                    </c:forEach>
+                </table> 
+                <br />
+                <br />
+                <div><h:commandLink value="Назад" action="/index.xhtml" /> </div>
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+
