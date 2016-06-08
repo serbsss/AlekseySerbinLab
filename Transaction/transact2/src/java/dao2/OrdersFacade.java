@@ -17,7 +17,7 @@ import model2.Orders;
 
 /**
  *
- * @author Сергей
+ * @author Serbin
  */
 @Stateless
 public class OrdersFacade extends AbstractFacade<Orders> {
