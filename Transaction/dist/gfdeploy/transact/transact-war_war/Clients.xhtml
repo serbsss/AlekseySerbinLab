@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <table width="100%" height="100%">
+                <tr><td width="10%"></td>
+                    <td>
+                        <h1> 
+                            Clients
+                        </h1> 
+
+                        <table height="15%" width="100%">  
+                            <tr>
+
+                                <td style="border-bottom: 2px solid #0077CC"><b> Имя </b></td>
+                                <td style="border-bottom: 2px solid #0077CC"><b> Фамилия</b></td>
+
+                            </tr> 
+                            <c:forEach items="#{controllerBean.allClients}" var="cl">
+                                <tr> 
+                                    <td>#{cl.name}</td>
+                                    <td>#{cl.surname}</td>
+                                </tr> 
+                            </c:forEach>
+                        </table>
+
+                    </td>
+                </tr>
+
+
+            </table>
+            <a href="AddNewOrder.xhtml" style="color:#0077CC"> </a>
+            <br/>
+            <h:commandButton value="Orders"  action="/index.xhtml"/>
+            <br/>
+
+        </h:form>
+    </h:body>
+</html>
+

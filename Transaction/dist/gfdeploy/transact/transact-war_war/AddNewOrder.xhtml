@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <table>
+                <tr>
+                    <th>
+                        <h:outputLabel value="ClientId" for="clientId"/>
+                    </th>
+                    <th>
+                        <h:inputText id="clientId" value="#{controllerBean.order.clientId}" required="true">  
+                        </h:inputText>                                                                   
+
+                    </th>
+                    <th>
+                        <h:message for="clientId" style="color:red" /> 
+                    </th>
+                </tr>
+
+                <tr>
+                    <th>
+                        <h:outputLabel value="TotalSum" for="totalSum"/>
+                    </th>
+                    <th>
+                        <h:inputText id="totalSum" value="#{controllerBean.order.totalSum}" required="true">
+                        </h:inputText>                                                                   
+                    </th>
+                    <th>
+                        <h:message for="totalSum" style="color:red" /> 
+                    </th>
+                </tr> 
+
+
+                <tr>
+                  
+                    <th>
+                        <h:commandLink value="Add Order" action="#{controllerBean.addNewOrder()}"/>
+                    </th>
+                    <th>
+                        <h:commandLink value="Add Order 2" action="#{controllerBean.addNewOrder1()}"/>
+                    </th>
+                    <th>
+                        <h:commandLink value="Add Order 3" action="#{controllerBean.addNewOrder2()}"/>
+                    </th>
+                    <th>
+                        <h:commandLink value="Add Order 4" action="#{controllerBean.addNewOrder3()}"/>
+                    </th>
+                    <th>
+                        <h:commandLink value="Add Order 5" action="#{controllerBean.addNewOrder4()}"/>
+                    </th>
+                </tr>
+            </table>
+        </h:form>
+    </h:body>
+</html>
+
